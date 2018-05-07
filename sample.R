@@ -1,6 +1,4 @@
-#Example where n = 4
-
-x <- 4
+x <- 2
 
 directed.m <- data.frame(unique(t(combn(rep(LETTERS[1:x],2),2))))
 
@@ -25,14 +23,14 @@ return(do.call(rbind,out))
 
 }
 
-i <- matrix(1:nrow(network.sample(nrow(no_loops))))
+i <- matrix(1:nrow(network.sample(nrow(directed.m))))
 
-lapply(X = apply(i, 1, 
+centralization <- function(x){
+  centralization.betweenness(x)$centralization
+}
+
+do.call(rbind,lapply(X = lapply(X = apply(i, 1, 
                  FUN = function(x){
-                   no_loops[network.sample(nrow(no_loops))[x,],][complete.cases(no_loops[network.sample(nrow(no_loops))[x,],]),]
+                   directed.m[network.sample(nrow(directed.m))[x,],][complete.cases(directed.m[network.sample(nrow(directed.m))[x,],]),]
 }), 
-FUN = graph.data.frame)
-
-#How many nodes? 3
-#How many possible edges? 3*(3+1)
-#How many possible combinations of edges? (2^(n^2)) -1
+FUN = graph.data.frame), FUN = centralization))

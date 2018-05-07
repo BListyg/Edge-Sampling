@@ -1,4 +1,4 @@
-# Edge-Sampling
+# Graph Combinatorics
 
 A question I was wondering recently was: how many different combinations of edges can be made from a complete graph with *n* nodes?
 

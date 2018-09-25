@@ -2,18 +2,18 @@ library(igraph)
 
 edge_samp <- function(x,n){y=x
 combn(nrow(x),n,FUN=function(x) y[x,],simplify=FALSE)}
+      
+flattenlist <- function(x){  
+morelists <- sapply(x, function(xprime) class(xprime)[1]=="list")
+out <- c(x[!morelists], unlist(x[morelists], recursive=FALSE))
+if(sum(morelists)){ 
+Recall(out)
+}else{
+return(out)
+}
+}
 
 directednoloops <- function(x){
-  
-  flattenlist <- function(x){  
-    morelists <- sapply(x, function(xprime) class(xprime)[1]=="list")
-    out <- c(x[!morelists], unlist(x[morelists], recursive=FALSE))
-    if(sum(morelists)){ 
-      Recall(out)
-    }else{
-      return(out)
-    }
-  }
   
   complete_g <- rbind(
     combn(x = x, m = 2) %>% t,

@@ -1,5 +1,7 @@
 library(igraph)
 
+#Faster than original attempt, but still not great :/
+
 edge_samp <- function(x,n){y=x
 combn(nrow(x),n,FUN=function(x) y[x,],simplify=FALSE)}
       

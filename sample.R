@@ -1,3 +1,5 @@
+#Original attempt at this problem. Very very slow.
+
 x <- 2
 
 directed.m <- data.frame(unique(t(combn(rep(LETTERS[1:x],2),2))))

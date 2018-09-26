@@ -73,20 +73,20 @@ all_graphs <- function(x){
   
 }
 
-par(mfrow=c(1,4))
+# par(mfrow=c(1,4))
 
-do.call(rbind,undirected(3) %>% lapply(function(x){centralization.betweenness(x)$centralization})) %>% hist
+# do.call(rbind,undirected(3) %>% lapply(function(x){centralization.betweenness(x)$centralization})) %>% hist
 
-do.call(rbind,undirected(4) %>% lapply(function(x){centralization.betweenness(x)$centralization})) %>% hist
+# do.call(rbind,undirected(4) %>% lapply(function(x){centralization.betweenness(x)$centralization})) %>% hist
 
-do.call(rbind,undirected(5) %>% lapply(function(x){centralization.betweenness(x)$centralization})) %>% hist
+# do.call(rbind,undirected(5) %>% lapply(function(x){centralization.betweenness(x)$centralization})) %>% hist
 
-do.call(rbind,undirected(6) %>% lapply(function(x){centralization.betweenness(x)$centralization})) %>% hist
+# do.call(rbind,undirected(6) %>% lapply(function(x){centralization.betweenness(x)$centralization})) %>% hist
 
-function(x){
-  c(
-    (2^(x^2))-1,
-    (2^(x*(x-1)))-1,
-    (2^((x*(x-1))/2))-1
-  )
-}
+# function(x){
+#   c(
+#     (2^(x^2))-1,
+#     (2^(x*(x-1)))-1,
+#     (2^((x*(x-1))/2))-1
+#   )
+# }

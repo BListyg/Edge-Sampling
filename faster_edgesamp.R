@@ -74,6 +74,8 @@ all_graphs <- function(x){
   )
   
 }
+                                                    
+par(mfrow=c(3,3));lapply(undirected(3),function(x){plot(x,layout=layout_in_circle,vertex.size=100, vertex.label.cex=2)})
 
 # par(mfrow=c(1,4))
 
